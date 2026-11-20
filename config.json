@@ -1,0 +1,7 @@
+{
+  "title": "Моя лента",
+  "news_dir": "/home/admin/projects/AI/agent-news/news",
+  "host": "127.0.0.1",
+  "port": 8765,
+  "refresh_seconds": 8
+}

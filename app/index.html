@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11161c" />
+    <title>Моя лента</title>
+    <link rel="stylesheet" href="/styles.css?v=2.3-no-avatars" />
+  </head>
+  <body>
+    <section class="auth-gate" id="authGate" hidden aria-labelledby="authTitle">
+      <form class="auth-card" id="authForm">
+        <p class="eyebrow">PRIVATE FEED</p>
+        <h1 id="authTitle">Доступ к ленте</h1>
+        <p>Введите пароль, чтобы продолжить.</p>
+        <label for="authPassword">Пароль</label>
+        <input id="authPassword" type="password" autocomplete="current-password" required autofocus />
+        <button type="submit">Войти</button>
+        <span class="auth-error" id="authError" role="alert"></span>
+      </form>
+    </section>
+    <div class="app-shell">
+      <header class="app-bar">
+        <div class="app-bar-inner">
+          <div class="top-actions">
+            <label class="search">
+              <span aria-hidden="true">⌕</span>
+              <input id="searchInput" type="search" placeholder="Поиск по сообщениям…" autocomplete="off" />
+              <kbd>/</kbd>
+            </label>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="channel-header">
+          <div class="channel-copy">
+            <p class="eyebrow" id="todayLabel"></p>
+            <h1 id="pageTitle">Моя лента</h1>
+          </div>
+          <div class="channel-stats" aria-label="Сводка">
+            <div><strong id="totalMetric">0</strong><span>публикаций</span></div>
+            <div><strong id="todayMetric">0</strong><span>сегодня</span></div>
+            <div><strong id="sourceMetric">0</strong><span>источников</span></div>
+          </div>
+          <span class="connection-state channel-connection">
+            <i class="connection-dot" id="statusDot" aria-hidden="true"></i>
+            <span id="statusText">Подключение…</span>
+          </span>
+          <span class="latest" id="latestMetric">Ждём первые материалы</span>
+        </section>
+
+        <section class="filter-panel">
+          <nav class="view-tabs" aria-label="Разделы">
+            <button class="nav-item active" data-view="all"><span>Все</span><b id="allCount">0</b></button>
+            <button class="nav-item" data-view="unread"><span>Новые</span><b id="unreadCount">0</b></button>
+            <button class="nav-item" data-view="important"><span>Важные</span><b id="importantCount">0</b></button>
+          </nav>
+          <div class="category-row" id="categoryRow" aria-label="Фильтр по рубрикам"></div>
+        </section>
+
+        <section class="feed" id="feed" aria-live="polite">
+          <div class="loading-card"><span></span><span></span><span></span></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="/app.js?v=2.3-no-avatars"></script>
+  </body>
+</html>
